@@ -1,0 +1,30 @@
+model:
+  package: generated
+  filename: ./generated/model.go # https://github.com/99designs/gqlgen/tree/master/plugin/modelgen
+client:
+  package: generated
+  filename: ./generated/client.go # Where should any generated client go?
+#omit_slice_element_pointers: true
+autobind:
+  - "github.com/coretech/dtc-api-gateway/internal/app/gateway/domain"
+models:
+  ID:
+    model:
+      - github.com/99designs/gqlgen/graphql.ID
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+  Int:
+    model:
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+  Transaction:
+    model: github.com/coretech/dtc-api-gateway/internal/app/gateway/domain.Transaction
+endpoint:
+  url: http://localhost:7300/v1/query
+query:
+  - "./query/*.graphql" # Where are all the query files located?
+generate:
+  clientV2: true
+  clientInterfaceName: "TransactionsClient"

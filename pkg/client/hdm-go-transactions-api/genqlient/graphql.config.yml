@@ -1,0 +1,9 @@
+schema: schema.graphqls
+extensions:
+  endpoints:
+    Dev:
+      url: http://localhost:7300/v1/query
+      headers:
+        user-agent: JS GraphQL
+      introspect: true
+

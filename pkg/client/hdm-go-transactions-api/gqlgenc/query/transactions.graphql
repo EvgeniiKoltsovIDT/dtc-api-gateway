@@ -1,0 +1,7 @@
+query GetTransactions($filter: TransactionFilter, $limit: Int, $skip: Int) {
+    GetTransactions(filter: $filter, limit: $limit, skip: $skip) {
+        TxID
+        TxType
+        Timestamp
+    }
+}

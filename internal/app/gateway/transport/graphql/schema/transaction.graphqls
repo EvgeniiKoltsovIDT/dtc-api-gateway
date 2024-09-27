@@ -1,0 +1,15 @@
+type Transaction {
+    TxID: String!
+    TxType: String!
+    Timestamp: Int!
+}
+
+input TransactionFilter {
+    UserID: String
+    ID: String
+    TxType: [String!]
+}
+
+extend type Query {
+    GetTransactions(filter: TransactionFilter, limit: Int, skip: Int): [Transaction!]!
+}
